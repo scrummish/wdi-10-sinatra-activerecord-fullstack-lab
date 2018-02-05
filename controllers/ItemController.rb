@@ -15,7 +15,15 @@ class ItemController < ApplicationController
 	end
 
 	post '/add' do
-		p params
-		"you posted. check your terminal."
+		pp params
+		
+		# this is how you add something with ActiveRecord.  so chill.
+		@item = Item.new
+		@item.title = params[:title]
+		@item.user_id = 9 # for now
+		@item.save
+
+		# hey there's a .to_json method. cool.
+		@item.to_json
 	end
 end
