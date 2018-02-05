@@ -14,4 +14,8 @@ class ItemController < ApplicationController
 		erb :add_item
 	end
 
+	post '/add' do
+		p params
+		"you posted. check your terminal."
+	end
 end
